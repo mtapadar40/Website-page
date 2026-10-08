@@ -8,6 +8,63 @@
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+    .house-gallery {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .gallery-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .gallery-row img {
+        width: 100%;
+        height: 280px;
+        object-fit: contain;
+        background-color: white;
+        border: 1px solid #dddddd;
+        cursor: zoom-in;
+    }
+
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .large-image {
+        max-width: 95%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+
+    .close-image {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        color: white;
+        font-size: 45px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-row {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -38,30 +95,53 @@
         </div>
     </section>
 
-    <div class="container">
+    <div class="container house-gallery">
 
-        <h1>House</h1>
+    <div class="gallery-row">
+        <img src="images/House/First floor.jpg"
+             alt="First floor"
+             onclick="openImage(this)">
 
-        <div class="row">
+        <img src="images/House/Second floor.jpg"
+             alt="Second floor"
+             onclick="openImage(this)">
 
-            <div class="col-md-6">
-                <img src="images/house_outside.jpg"
-                     class="img-responsive"
-                     alt="House">
-            </div>
-
-            <div class="col-md-6">
-                <h2>About the House</h2>
-
-                <p>
-                    Put your information about the house project here.
-                </p>
-
-                <a href="index.html">Back to Home</a>
-            </div>
-
-        </div>
+        <img src="images/House/Third floor.jpg"
+             alt="Third floor"
+             onclick="openImage(this)">
     </div>
 
-</body>
-</html>
+    <div class="gallery-row">
+        <img src="images/House/Ortho first.jpg"
+             alt="First orthographic view"
+             onclick="openImage(this)">
+
+        <img src="images/House/Ortho second.jpg"
+             alt="Second orthographic view"
+             onclick="openImage(this)">
+
+        <img src="images/House/Ortho third.jpg"
+             alt="Third orthographic view"
+             onclick="openImage(this)">
+    </div>
+
+    <div class="gallery-row">
+        <img src="images/House/Section 1.jpg"
+             alt="Section 1"
+             onclick="openImage(this)">
+
+        <img src="images/House/Section 2.jpg"
+             alt="Section 2"
+             onclick="openImage(this)">
+
+        <img src="images/House/Section 3.jpg"
+             alt="Section 3"
+             onclick="openImage(this)">
+    </div>
+
+</div>
+
+<div id="imageModal" class="image-modal" onclick="closeImage(event)">
+    <span class="close-image" onclick="closeImage()">&times;</span>
+    <img id="largeImage" class="large-image" alt="">
+</div>
