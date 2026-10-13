@@ -145,3 +145,26 @@
     <span class="close-image" onclick="closeImage()">&times;</span>
     <img id="largeImage" class="large-image" alt="">
 </div>
+    
+<script>
+    function openImage(image) {
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("largeImage").src = image.src;
+        document.getElementById("largeImage").alt = image.alt;
+    }
+
+    function closeImage(event) {
+        if (!event || event.target.id === "imageModal") {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
