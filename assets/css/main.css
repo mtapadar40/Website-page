@@ -674,6 +674,14 @@ button[disabled], html input[disabled] {
 			margin-right: 0px;
 		}
 
+		/* Keep the name clear of the menu icon on phones */
+		@media screen and (max-width: 480px) {
+			.header .logo {
+				letter-spacing: 0.15em;
+				max-width: calc(100% - 80px);
+			}
+		}
+
 
 
 
@@ -720,29 +728,23 @@ button[disabled], html input[disabled] {
 .a a:hover .img-hover {
 	opacity: 0;
 }
-.a a .img-hover.glass {
-    background: #ea766a;
+/* Project tile colours: add one class per project */
+.a a .img-hover.house {
+    background: rgba(60, 150, 220, 0.7);
 }
-.a a .img-hover.shoes-glass {
+.a a .img-hover.marble-run {
     background: #a0c4a3;
 }
-.a a .img-hover.hand-parts {
+.a a .img-hover.tower {
     background: #da9dd9;
 }
-.a a .img-hover.table-with-phone {
-    background: #6da178;
-}
-.a a .img-hover.orange-shoe {
-    background: #da9567;
-}
-.a a .img-hover.glass-shoes {
-    background: #5dc6aa;
-}
-.a a .img-hover.girls-tops {
-    background: #cab0a6;
-}
-.a a .img-hover.egg-arts {
-    background: #ddd173;
+
+/* Square thumbnails so landscape and portrait project images line up */
+.tiles .a a img.img-responsive {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+	background-color: #fff;
 }
 .a a .img-hover .c-table {
 	display: table;
@@ -833,6 +835,7 @@ li.popup-socials-icons {
 
 .pop-up-color img {
 	margin: 0px auto;
+	max-height: 80vh;
 }
 
 .pop-up-color .p-r-0 {
